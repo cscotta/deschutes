@@ -1,0 +1,40 @@
+package analytics;
+
+option java_package = "com.cscotta.deschutes.example.requests";
+option java_outer_classname = "Requests";
+
+message Request {
+
+  enum Protocol {
+    HTTP = 0;
+    HTTPS = 1;
+    SPDY = 2;
+    QUIC = 3;
+  }
+
+  enum OperationType {
+    GET = 0;
+    PUT = 1;
+    DELETE = 2;
+  }
+
+  required int64 timestamp = 1;
+  required int32 serverId = 2;
+  required int32 userId = 3;
+  required int32 clientIp = 4;
+  required int32 serverIp = 5;
+  required OperationType operationType = 6;
+  required Protocol protocol = 7;
+  required int32 responseCode = 8;
+  required string uri = 9;
+  required int32 requestBytes = 10;
+  required int32 responseBytes = 11;
+  required int64 handshakeUsec = 12;
+  required int64 usecToFirstByte = 13;
+  required int64 usecTotal = 14;
+
+  optional string userAgent = 15;
+  optional string locale = 16;
+  optional string referrer = 17;
+
+}

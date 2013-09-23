@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script type="text/javascript" src="js/d3.v3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="wrap">
+        <div id="mainChart"></div>
+            <table class="legend">
+                <tr>
+                    <td colspan="8" class="title">Request Size (bytes)</td>
+                </tr>
+                <tr>
+                    <td><a rel="min" class="label active min" href="#">min</a></td>
+                    <td><a rel="max" class="label active max" href="#">max</a></td>
+                    <td><a rel="mean" class="label active mean" href="#">mean</a></td>
+                    <td><a rel="median" class="label active median" href="#">median</a></td>
+                    <td><a rel="p95" class="label active p95" href="#">p95</a></td>
+                    <td><a rel="p98" class="label active p98" href="#">p98</a></td>
+                    <td><a rel="p99" class="label active p99" href="#">p99</a></td>
+                    <td><a rel="p999" class="label active p999" href="#">p999</a></td>
+                </tr>
+            </table>
+            <hr />
+            <p>Select Dimension:
+                <select id="dimension">
+                  <option id="HTTP" value="HTTP">HTTP</option>
+                  <option id="HTTPS" value="HTTPS">HTTPS</option>
+                  <option id="SPDY" value="SPDY">SPDY</option>
+                  <option id="QUIC" value="QUIC">QUIC</option>
+                </select>
+                Select Measure:
+                <select id="measure">
+                  <option id="requestBytesHisto" value="requestBytesHisto">Request Size (bytes)</option>
+                  <option id="responseBytesHisto" value="responseBytesHisto">Response Size (bytes)</option>
+                  <option id="handshakeUsecHisto" value="handshakeUsecHisto">SSL Handshake Latency (usec)</option>
+                  <option id="usecToFirstByteHisto" value="usecToFirstByteHisto">Time to First Byte (usec)</option>
+                  <option id="usecTotalHisto" value="usecTotalHisto">Total Request Latency (usec)</option>
+                </select><br />
+            </p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript">app.launch();</script>
+</body>
+</html>

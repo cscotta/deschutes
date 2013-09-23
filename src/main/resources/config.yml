@@ -1,0 +1,11 @@
+dataSource: synthetic
+dataFile: small-data.proto
+windowLength: 10
+aggregatorType: nonblocking
+decodeOnly: false
+processorThreads: 2
+runFor: 0
+
+http:
+  port: 8080
+  connectorType: nonblocking
