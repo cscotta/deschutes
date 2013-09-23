@@ -2,3 +2,5 @@ Implementation of a streaming OLAP aggregation engine. Defines an API for
 processing streaming datasets, and provides two implementations of streaming
 aggregators: one built atop lockless collections, and a second build atop
 collections implemented using lock-striping.
+
+Javadoc at http://taco.cat/deschutes/
